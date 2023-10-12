@@ -1,0 +1,22 @@
+package cn.alex.constant;
+
+public interface ConstantPool {
+
+  int CONSTANT_UTF8 = 1;
+  int CONSTANT_INTEGER = 3;
+  int CONSTANT_FLOAT = 4;
+  int CONSTANT_LONG = 5;
+  int CONSTANT_DOUBLE = 6;
+  int CONSTANT_CLASS = 7;
+  int CONSTANT_STRING = 8;
+  int CONSTANT_FIELD_REF = 9;
+  int CONSTANT_METHOD_REF = 10;
+  int CONSTANT_INTERFACE_METHOD_REF = 11;
+  int CONSTANT_NAME_AND_TYPE = 12;
+  int CONSTANT_METHOD_HANDLE = 15;
+  int CONSTANT_METHOD_TYPE = 16;
+  int CONSTANT_DYNAMIC = 17;
+  int CONSTANT_INVOKE_DYNAMIC = 18;
+  int CONSTANT_MODULE = 19;
+  int CONSTANT_PACKAGE = 20;
+}
