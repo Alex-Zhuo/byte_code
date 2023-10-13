@@ -13,6 +13,6 @@ public class ConstantPoolInfo {
   }
   public ConstantPoolInfo(DataInputStream in, Integer tag) {
     this.tag = tag;
-    System.out.println("start analysis " + this.getClass().getName());
+    System.out.println("\nstart analysis " + this.getClass().getName());
   }
 }

@@ -99,7 +99,7 @@ public class ClassFile {
             "constantPool[" + i + "]: " + cp.getClass().getSimpleName() + " >>> " + JSONObject.toJSONString(cp));
       }
       this.accessFlags = ClassReader.readUnsignedShort(in);
-      System.out.println("accessFlags: >>> " + this.accessFlags);
+      System.out.println("\naccessFlags: >>> " + this.accessFlags);
       //this class name index in constant pool
       this.thisClass = ClassReader.readUnsignedShort(in);
       System.out.println("thisClass: >>> " + this.thisClass);

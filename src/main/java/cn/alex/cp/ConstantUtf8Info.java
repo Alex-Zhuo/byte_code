@@ -26,6 +26,7 @@ public class ConstantUtf8Info extends ConstantPoolInfo {
     for (int i = 0; i < len; i++) {
       data[i] = (byte) ClassReader.readUnsignedByte(in);
     }
+    System.out.println("utf8 data: " + new String(data));
     this.bytes = data;
   }
 }
