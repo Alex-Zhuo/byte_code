@@ -1,10 +1,23 @@
 package cn.alex.cp;
 
+import cn.alex.util.ClassReader;
 import java.io.DataInputStream;
+import java.io.IOException;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-public class ConstantFloatInfo extends ConstantPoolInfo{
+/**
+ * u1 tag;
+ * u4 bytes;
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class ConstantFloatInfo extends ConstantPoolInfo {
 
-  public ConstantFloatInfo(DataInputStream in) {
-    super(in);
+  private Integer bytes;
+
+  public ConstantFloatInfo(DataInputStream in, Integer tag) throws IOException {
+    super(in, tag);
+    this.bytes = ClassReader.readInt(in);
   }
 }

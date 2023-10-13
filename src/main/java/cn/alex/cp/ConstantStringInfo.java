@@ -1,10 +1,22 @@
 package cn.alex.cp;
 
+import cn.alex.util.ClassReader;
 import java.io.DataInputStream;
+import java.io.IOException;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-public class ConstantStringInfo extends ConstantPoolInfo{
+/**
+ * u1 tag;
+ * u2 string_index;
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class ConstantStringInfo extends ConstantPoolInfo {
 
-  public ConstantStringInfo(DataInputStream in) {
-    super(in);
+  private Integer stringIndex;
+  public ConstantStringInfo(DataInputStream in, Integer tag) throws IOException {
+    super(in, tag);
+    this.stringIndex = ClassReader.readUnsignedShort(in);
   }
 }

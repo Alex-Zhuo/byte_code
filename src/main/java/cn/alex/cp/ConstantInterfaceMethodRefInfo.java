@@ -1,10 +1,26 @@
 package cn.alex.cp;
 
+import cn.alex.util.ClassReader;
 import java.io.DataInputStream;
+import java.io.IOException;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-public class ConstantInterfaceMethodRefInfo extends ConstantPoolInfo{
+/**
+ * u1 tag;
+ * u2 class_index;
+ * u2 name_and_type_index;
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class ConstantInterfaceMethodRefInfo extends ConstantPoolInfo {
 
-  public ConstantInterfaceMethodRefInfo(DataInputStream in) {
-    super(in);
+  private Integer classIndex;
+  private Integer nameAndTypeIndex;
+
+  public ConstantInterfaceMethodRefInfo(DataInputStream in, Integer tag) throws IOException {
+    super(in, tag);
+    this.classIndex = ClassReader.readUnsignedShort(in);
+    this.nameAndTypeIndex = ClassReader.readUnsignedShort(in);
   }
 }
